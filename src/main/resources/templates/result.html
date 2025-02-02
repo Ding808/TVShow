@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Result</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Result</h1>
+<p>You selected: Box [[${selectedBoxId}]]，The gift is: <strong>[[${selectedPrize}]]</strong></p>
+
+<h2>All box include</h2>
+<ul>
+    <li th:each="box : ${boxes}">
+        Box [[${box.id}]]: [[${box.prize}]]
+    </li>
+</ul>
+
+<a th:href="@{/}">Again</a>
+
+<footer>
+    <p>Yueyang Ding</p>
+</footer>
+</body>
+</html>

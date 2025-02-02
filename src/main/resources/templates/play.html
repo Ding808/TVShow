@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Play the Game</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Choose a box</h1>
+<form action="#" th:action="@{/play}" method="post">
+    <div th:each="box : ${boxes}">
+        <input type="radio" name="selectedBox" th:value="${box.id}" id="box__[[${box.id}]]">
+        <label th:for="'box__' + ${box.id}">Box [[${box.id}]]</label>
+    </div>
+    <br>
+    <button type="submit">Play</button>
+</form>
+<footer>
+    <p>Yueyang Ding</p>
+</footer>
+</body>
+</html>
